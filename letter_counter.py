@@ -28,3 +28,12 @@ demo = gr.Interface(
 # Launch both the Gradio web interface and the MCP server
 if __name__ == "__main__":
     demo.launch(mcp_server=True)
+
+
+
+#When you set mcp_server=True in launch(), several things happen:
+# Gradio functions are automatically converted to MCP Tools
+# Input components map to tool argument schemas
+# Output components determine the response format
+# The Gradio server now also listens for MCP protocol messages
+# JSON-RPC over HTTP+SSE is set up for client-server communication
